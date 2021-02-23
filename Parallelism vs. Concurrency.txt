@@ -1,0 +1,15 @@
+Problem: You have to build two parallel brick walls. You have to carry the pile of bricks with you as you move along building the two walls.
+
+Naive Solution: Build one wall. Go back to the start point. Build the other wall. It is simple to see how this isn't efficient. You'll be carrying the bricks along with you till the end, and then move them back to the start point.
+
+Concurrency: Lay down one column of bricks of one wall, and then move to the other wall. When two corresponding columns of the two walls are built, move to the next column. This is a lot more efficient, since by the time you reach the end, you will be done, and the effort of carrying the pile of bricks from one end back to the start, will not be required.
+
+Parallelism: Hire another brick layer who works alongside you on the second wall, while you are working on the first wall. This is obviously the best model, since it essentially reduces time to lay the bricks by half. However, it does require an extra brick layer.
+
+Parallelism vs. Concurrency: Both are models of multi-programming.
+
+Concurrency is essentially when two tasks are being performed at the same time. This might mean that one is 'paused' for a short duration, while the other is being worked on. Importantly, a different task is begun before an ongoing task is completed. This makes it a multi-programming model.
+
+Parallelism requires that at least two processes/tasks are actively being performed at a particular moment in time. As illustrated by the metaphor above, this means that you require at least two 'processors' or 'workers'.
+
+The number of tasks actively being completed/performed at any instance of time, is what differentiates the two models.
