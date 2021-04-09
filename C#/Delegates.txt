@@ -7,3 +7,47 @@ https://www.youtube.com/watch?v=s0tkKZoMN1Y
 
 https://www.youtube.com/watch?v=7uJYp9NIhfQ
 
+---------------------------------------------------
+
+calling method 
+Employee.PromoteEmpoloyee (employeeList, x => x. Salary >= 10000);
+
+---------------------------------------------------
+
+delegate bool IsPromotable (Employee empl);
+
+class Employee
+{
+	public int ID { get; set; }
+	public string Name { get; set; }
+	public int Salary { get; set; }
+	public int Experience { get; set; }
+
+// New Flexible, delegatebased , Reusable,  extensible logic
+	public static void Promote EmployeeList<Employee> employeelist, IsPromotable IsEligibleToPromote)
+	{
+		foreach (Employee employee in employeelist)
+		{
+			if (IsEligibleToPromote (employee))
+			{
+			Console.WriteLine(employee.Name + promoted");
+			}
+		}
+	}
+}
+
+------------------------------------------------------------
+Old Hardcore, non-reusable, non extensible,  logic
+
+public static void Promote EmployeeList<Employee> employeelist)
+{
+	foreach (Employee employee in employeelist)
+	{
+		if (employee. Experience >= 5)
+		{
+		Console.WriteLine(employee.Name + promoted");
+		}
+	}
+}
+
+---------------------------------------------------------------
