@@ -51,3 +51,12 @@ public static void Promote EmployeeList<Employee> employeelist)
 }
 
 ---------------------------------------------------------------
+
+How do we decide whether we need to use an Interface or a Delegate to achieve flexibility?
+Well, part of that is personal preference and different developers have different tastes.
+But the guideline in MSDN suggests to use Delegates when we have some kind of eventing design pattern or the caller doesn't need to access other properties, methods, or interfaces on the object implementing the method.
+In the case of the example I showed you our filters were just one basic simple method and there were no other properties or methods.
+But imagine if our Photo Processor needed to access other properties or methods, obviously a Delegate wouldn't work and we have to use an Interface.
+
+-Mosh
+---------------------------------------------------------------
