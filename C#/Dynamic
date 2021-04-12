@@ -1,0 +1,16 @@
+Now, C# started as a static language, but in.NET Framework version 4, they added dynamic capability to it, and the intention was to improve interoperability with COM or dynamic languages in .NET like IronPython.
+If you're writing code for Microsoft Office applications such as Word or Excel, dynamic is a feature that is going to help you a lot.
+
+Without dynamics, you have to use reflection.
+What is reflection?
+Reflection is a way to inspect the metadata about the type, and access properties and methods.
+object o = "Mosh";
+o.GetHashCode();
+ with reflection : o.GetType().GetMethod("GetHashCode").Invoke(null,null); 
+ withdynamic : dynamic excelobj = "Mosh";
+			   excelobj.Optimize();
+
+CLR or Common Language Runtime. It's.NET's virtual machine that gets your compiled code which is in intermediate language, which is I_L.
+Then, converts that or recompose that into machine code at runtime.
+In.NET Framework version 4, they added a new component called DLR, which is a Dynamic Language Runtime.
+So DLR sits on top of CLR, and gives dynamic language capabilities to C#.
