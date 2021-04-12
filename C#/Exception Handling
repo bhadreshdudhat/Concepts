@@ -1,0 +1,12 @@
+why do we need finally block?
+
+In.NET, we have classes that access unmanaged resources. What do I mean by unmanaged resources, that is resources that are not managed by CLR, so there is no garbage collection applied to them. Examples are file handles, database connections, network connections, graphic handles and in situations like that we need to manually do the cleanup.
+
+Now any class that uses unmanaged resources is expected to implement an interface called IDisposable. IDisposable defines a method Dispose() to release allocated resources.
+
+use of using keyword : 
+using(var sr = new StreamReader(@"dfdfd/sss.zip"))
+{
+  ........
+}
+So basically, when you use a using statement, internally the compiler will create a finally block under the hood. Which will call the Dispose method of StreamReader.
